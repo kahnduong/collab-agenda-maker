@@ -1,0 +1,81 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Collaborative Agenda Maker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css" /><!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" type="text/css" /><!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+    <style>
+        .meetingitem {
+            width: 100%;
+            height: 100%;
+            resize: none;
+        }
+        .fake-meeting-item {
+            display: none;
+        }
+        #meetingitems {
+            background: #ccc;
+        }
+        .item-row {
+          padding: 0.5em;
+          margin-bottom: 1em;
+          border: 1px solid #a33;
+        }
+    </style>
+    <script type="text/javascript" src="js/agenda.js">
+    </script>
+</head>
+<body>
+    <script src="lib/json0.js"></script>
+    <script src="lib/text.js"></script>
+    <script src="lib/share.uncompressed.js"></script>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="http://agenda-maker-kahnduong.c9.io">Home</a></li>
+            <li role="presentation"><a href="https://github.com/kahnduong/collab-agenda-maker">Source</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Agenda Maker</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h3>Plan a meeting together.</h3>
+        <p>Others can join you at: <span><a id="sharelink" href="http://www.google.com">www.google.com</a></span></p>
+      </div>
+      
+      <div id="meetingItems"></div>
+      <div>
+          <button type="button" class="btn btn-default" id="add_new_item_button" aria-label="New line">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </button>
+      </div>
+      
+      <!-- Hidden -->
+      <div class="row item-row fake-meeting-item" id="meetingItemTemplate">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-default" id="item-move-up" aria-label="Move Up">
+              <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default" id="item-move-down" aria-label="Move Down">
+              <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default" id="item-remove" aria-label="Delete">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" name="done" id="meetingitem1" />
+        </div>
+        <div class="col-md-9">
+            <textarea class="meetingitem" id="meetingitem1" placeholder="Type something..."></textarea>
+        </div>
+      </div>
+</div>
+</body>
+</html>
